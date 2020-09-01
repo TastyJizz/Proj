@@ -1,4 +1,3 @@
 # Proj
-Version 1.0
-Just a prototype with no gui but all core classes
-only adopts simple sequencial algorithm for storing data
+Version 2.0
+An advanced version with better algorithms
