@@ -1,7 +1,7 @@
 import nltk;
 
 # static tag set in real life can be much bigger
-tags = ('life', 'sports', 'fun', 'film', 'food', 'vehicle', 'game', 'electron');
+tags = ('life', 'sports', 'fun', 'film', 'food', 'vehicle', 'game', 'electronics');
 # A static hash table to store keywords and their related tags
 TKSet : Dictionary;
 class Event:

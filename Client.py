@@ -1,9 +1,11 @@
 import Server;
 import Event;
+import Account;
 # Simulate a 'client'
 # Version 1.0
 
 class Client:
+    self._account : Account.Account;
     self._accountName:str;
     self._password:str;
     self._online = False;
@@ -60,6 +62,7 @@ you want to report a bug or have any problems.\n', sep = '\n');
         title : str;
         body :str;
         opt : str;
+        # May add validations here
         title = input('Enter a title with a minimum letters of 10');
         body = input('How do you feel today?');
         print('Upload now? 1) yes 2) Cancel');
@@ -78,7 +81,7 @@ you want to report a bug or have any problems.\n', sep = '\n');
     #def log_in_pressed(self)
 
     
-    # All these are support methods
+    # All these are support methods if in GUI
     def log_in(self, acc, pwd) -> bool:
         if not Server.checkAccounts(acc, pwd):
             print("Incorrect account name or password.");
@@ -95,6 +98,30 @@ you want to report a bug or have any problems.\n', sep = '\n');
 
     # Register in the server and get the new user's interests
     def register(self):
+        account : str;
+        psw : str;
+        tags = [];
+        opt = "";
+        account = input("Please enter the new acount name:");
+        while Server.checkAccounts(account):
+            acount = input("Account name unavailable! Please input again: ");
+        psw = input("Please enter your password:");
+        while not psw == input("Please enter your password again:"):
+            print("Passwords unmatch!");
+            psw = input("Please enter again:");
+        print("What are you interested in?", "1) Life", \
+              "2) Sports", "3) Fun" , "4) Film", "5) Food", \
+              "6) Vehicle", "7) Game", "8) Electronics", \
+              "Press 'C' to confirm, "sep = "\n");
+        opt = get_option(('1', '2', '3', '4', \
+                          '5', '6', '7', '8', 'c');
+        while opt != 'c':
+            if not opt in tags:
+                tags.append(opt);
+            print("Pick another one?");
+            opt = get_option(('1', '2', '3', '4', \
+                          '5', '6', '7', '8', 'c');
+        Server.register(account, psw, tags);
         
         
     def upload(self, tit, bod);
@@ -105,8 +132,7 @@ you want to report a bug or have any problems.\n', sep = '\n');
     #def search
     # Like or dislike the event
     #def comment
-    #Check if the account exists
-    def checkAccInfo
+
     #Retrieve account information
     def retrieveAccInfo
     # Retrieve data or suggested events from the server
