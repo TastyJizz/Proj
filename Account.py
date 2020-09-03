@@ -1,8 +1,9 @@
 class Account:
-    self._accountName : str;
-    self._password : str;
-    self._interests : list;
+    # Temperarily public, would be private in version 2.0
+    account_name : str;
+    password : str;
+    interests : list;
     def __init__(self, acc, psw, tags):
-        self._accountName = acc;
-        self._password = psw;
-        self._interests = tags;
+        self.account_name = acc;
+        self.password = psw;
+        self.interests = tags;
